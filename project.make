@@ -1,47 +1,56 @@
+; ==================
 ; Default Drush make file for Drupal build
+; ==================
 
+; Drush API to use
 api = 2
+; Drupal core version
 core = 7.x
 
 ; Drupal core.
 projects[drupal][type] = core
 projects[drupal][version] = 7.50
+; Patches for core
 projects[drupal][patch][] = "https://drupal.org/files/issues/install-redirect-on-empty-database-728702-36.patch"
 
 ; Set the default sub directory for all contributed projects.
 defaults[projects][subdir] = contrib
 
 
-; ** Themes
-
+; ==================
+; Themes
+; ==================
 ;projects[adaptivetheme][type] = theme 
 ;projects[adaptivetheme] = 3.2
 
-; ** Contrib modules
 
-; Caching configuration
-projects[redis][subdir] = "contrib"
-projects[redis][version] = 3.12
+; ==================
+; Contrib modules
+; ==================
+
+; - Caching configuration
+;projects[redis][subdir] = "contrib"
+;projects[redis][version] = 3.12
 ;projects[varnish][subdir] = "contrib"
 ;projects[memcache][subdir] = "contrib"
 
-; Backups
+; - Backups
 projects[backup_migrate][subdir] = "contrib"
 projects[backup_migrate_files][subdir] = "contrib"
 
-; Font provider
-projects[fontyourface][subdir] = "contrib"
+; - Font provider
+;projects[fontyourface][subdir] = "contrib"
 ;projects[local_fonts][subdir] = "contrib"
 
 ; - Views and add-ons
 projects[views][subdir] = "contrib"
-projects[views_litepager][subdir] = "contrib"
-projects[views_php][subdir] = "contrib"
-projects[draggableviews][subdir] = "contrib"
+;projects[views_litepager][subdir] = "contrib"
+;projects[views_php][subdir] = "contrib"
+;projects[draggableviews][subdir] = "contrib"
 ;projects[views_bulk_operations][subdir] = "contrib"
 
-; -Database
-projects[schema][subdir] = "contrib"
+; - Database
+;projects[schema][subdir] = "contrib"
 
 ; - System Utilities
 projects[ctools][subdir] = "contrib"
@@ -151,13 +160,13 @@ projects[entitycache][subdir] = "contrib"
 projects[file_entity][subdir] = "contrib"
 projects[field_group][subdir] = "contrib"
 projects[filefield_paths][subdir] = "contrib"
-projects[variable][subdir] = "contrib"
-projects[link][subdir] = "contrib"
-projects[similarterms][subdir] = "contrib"
-projects[linkit][subdir] = "contrib"
-projects[rules][subdir] = "contrib"
-projects[title_override][subdir] = "contrib"
-projects[wfm][subdir] = "contrib"
+;projects[variable][subdir] = "contrib"
+;projects[link][subdir] = "contrib"
+;projects[similarterms][subdir] = "contrib"
+;projects[linkit][subdir] = "contrib"
+;projects[rules][subdir] = "contrib"
+;projects[title_override][subdir] = "contrib"
+;projects[wfm][subdir] = "contrib"
 ;projects[job_scheduler][subdir] = "contrib"
 ;projects[entityreference][subdir] = "contrib"
 ;projects[strongarm][subdir] = "contrib"
@@ -178,7 +187,7 @@ projects[mollom][subdir] = "contrib"
 projects[google_analytics][subdir] = "contrib"
 projects[ga_tokenizer][subdir] = "contrib"
 projects[google301][subdir] = "contrib"
-projects[contact_google_analytics][subdir] = "contrib"
+;projects[contact_google_analytics][subdir] = "contrib"
 ;projects[gmap][subdir] = "contrib"
 ;projects[gmap_addons][subdir] = "contrib"
 ;projects[google_analytics_reports][subdir] = "contrib"
@@ -195,7 +204,7 @@ projects[site_verify][subdir] = "contrib"
 ;projects[mailchimp][version] = 3.6
 ;projects[seo_checklist][subdir] = "contrib"
 
-; Access control
+; - Access control
 projects[r4032login][subdir] = "contrib"
 ;projects[content_access][subdir] = "contrib"
 ;projects[acl][subdir] = "contrib"
@@ -216,11 +225,13 @@ projects[filter_perms][subdir] = "contrib"
 
 ; - Development
 ;projects[devel][subdir] = "contrib"
-
 ; Platform.sh indicator module.
 ;projects[platform][version] = 1.3
 
-; ** Module patches
+
+; ==================
+; Module patches
+; ==================
 
 ; Patch Feeds module to schedule import to run at specific times
 ; https://www.drupal.org/node/1795262
@@ -229,7 +240,9 @@ projects[feeds][version] = 2.0-beta2
 projects[feeds][patch][] = "https://www.drupal.org/files/issues/schedule_import_to_run-1795262-8.patch"
 
 
-; ** Libraries
+; ==================
+; Libraries
+; ==================
 
 projects[libraries][subdir] = "contrib"
 
